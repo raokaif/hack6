@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <colorUtils.h>
 enum errorCode{
     no_error,
     error
