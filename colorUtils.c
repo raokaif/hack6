@@ -22,7 +22,7 @@ int rgbToCMYK(int r, int g, int b, double *c, double *m, double *y, double *k)
         *m = m1;
         *y = y1;
         *k = k1;
-        
+
         return 0;
     }
     else
@@ -39,7 +39,9 @@ int cmykToRGB(double c, double m, double y, double k, int *r, int *g, int *b)
         r1 = (255 * (1 - c) * (1 - k));
         g1 = (255 * (1 - m) * (1 - k));
         b1 = (255 * (1 - k) * (1 - k));
-
+        *r = r1;
+        *g = g1;
+        *b = b1;
         return 0;
     }
     else
