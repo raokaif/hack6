@@ -25,10 +25,19 @@ int rgbToCMYK(int r, int g, int b, double *c, double *m, double *y, double *k)
     }
 }
 
-    int cmykToRGB(double c, double m, double y, double k, int *r, int *g, int *b)
+int cmykToRGB(double c, double m, double y, double k, int *r, int *g, int *b)
+{
+    int r1, g1, b1;
+    if (c >= 0 && c <= 1 && m >= 0 && m <= 1 && y >= 0 && y <= 1 && k >= 0 && k <= 1)
     {
-        int r1, g1, b1;
         r1 = (255 * (1 - c) * (1 - k));
         g1 = (255 * (1 - m) * (1 - k));
         b1 = (255 * (1 - k) * (1 - k));
+
+        return 0;
     }
+    else
+    {
+        return 1;
+    }
+}
