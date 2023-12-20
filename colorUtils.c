@@ -1,4 +1,8 @@
 #include <stdio.h>
+enum errorCode{
+    no_error,
+    error
+};
 int rgbToCMYK(int r, int g, int b, double *c, double *m, double *y, double *k)
 {
     int r2, g2, b2;
@@ -23,11 +27,11 @@ int rgbToCMYK(int r, int g, int b, double *c, double *m, double *y, double *k)
         *y = y1;
         *k = k1;
 
-        return 0;
+        return no_error;
     }
     else
     {
-        return 1;
+        return error;
     }
 }
 
@@ -42,10 +46,10 @@ int cmykToRGB(double c, double m, double y, double k, int *r, int *g, int *b)
         *r = r1;
         *g = g1;
         *b = b1;
-        return 0;
+        return no_error;
     }
     else
     {
-        return 1;
+        return error;
     }
 }
