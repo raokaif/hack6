@@ -17,6 +17,12 @@ int rgbToCMYK(int r, int g, int b, double *c, double *m, double *y, double *k)
         c1 = ((1 - r2 - k1) / (1 - k1));
         m1 = ((1 - b2 - k1) / (1 - k1));
         y1 = ((1 - g2 - k1) / (1 - k1));
+
+        *c = c1;
+        *m = m1;
+        *y = y1;
+        *k = k1;
+        
         return 0;
     }
     else
